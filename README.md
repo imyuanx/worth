@@ -2,6 +2,8 @@
 
 A toy for bill analysis.
 
+Online Demo: [https://worth.yuanx.me/](https://worth.yuanx.me/)
+
 # Quick Start
 
 ```bash

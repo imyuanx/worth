@@ -51,7 +51,7 @@ function Home() {
                         className="translate-icon"
                         alt="logo"
                     /> */}
-                    <img onClick={() => { window.open("https://www.github.com/yunying1") }} src={github} className="github-icon" alt="logo" />
+                    <img onClick={() => { window.open("https://www.github.com/yunying1/worth") }} src={github} className="github-icon" alt="logo" />
                 </div>
             </div>
             <div className="container">

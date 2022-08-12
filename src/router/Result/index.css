@@ -1,0 +1,32 @@
+.container {
+    width: 100%;
+    text-align: center;
+}
+
+.header {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 90px;
+}
+
+.header span {
+    font-size: 65px;
+}
+
+.result {
+    font-size: 26px;
+    flex: 1;
+}
+
+.footer {
+    color: #00ADB5;
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}

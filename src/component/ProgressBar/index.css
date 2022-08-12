@@ -1,0 +1,19 @@
+.progress-bar-box {
+    width: 100%;
+    height: 65px;
+}
+
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #00ADB5;
+}
+
+.step-title {
+    font-size: 20px;
+    margin-top: 41px;
+    font-style: italic;
+}

@@ -1,0 +1,27 @@
+.page-title {
+    font-size: 24px;
+    margin-bottom: 50px;
+}
+
+.last-form-item {
+    margin-bottom: 35px!important;
+}
+
+.form-item-children {
+    display: flex;
+}
+
+.form-item-children-quantity {
+    max-width: 150px;
+    margin-left: 10px;
+}
+
+.message-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.message-icon-box {
+    display: flex;
+    gap: 10px;
+}

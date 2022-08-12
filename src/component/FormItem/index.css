@@ -1,0 +1,11 @@
+.form-item {
+    height: 93px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-item-label {
+    margin-bottom: 23px;
+    font-size: 20px;
+}

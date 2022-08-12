@@ -1,4 +1,6 @@
 .message {
+    display: flex;
+    justify-content: center;
     width: 100%;
     height: 100%;
     position: fixed;
@@ -21,7 +23,6 @@
     backdrop-filter: saturate(50%) blur(8px);
     background-color: rgb(0, 173, 181, .05);
     border: 1px solid rgb(0, 173, 181, .3);
-    /* color: white; */
     border-radius: 4px;
     box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.1);
     pointer-events: all;

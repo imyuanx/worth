@@ -3,11 +3,13 @@ import Button from "../../component/Button";
 import translate from "../../assets/translate.svg";
 import github from "../../assets/github.svg";
 import "./index.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useTranslation, Trans } from 'react-i18next';
 
 function Home() {
     const navigate = useNavigate();
     const [isOpen, setOpen] = useState(false);
+    const { t, i18n } = useTranslation();
 
     const toStep = () => {
         navigate("/step1");
@@ -17,15 +19,9 @@ function Home() {
         setOpen(true);
     };
 
-    // TODO: translate
     const toLocal = (tag) => {
         setOpen(false);
-
-        if (tag == "en") {
-            navigate("/");
-        } else {
-            navigate("/");
-        }
+        tag && i18n.changeLanguage(tag);
     };
 
     return (
@@ -43,14 +39,14 @@ function Home() {
             <div className="title">
                 <div>Worth</div>
                 <div className="icon-group">
-                    {/* <img
+                    <img
                         onClick={() => {
                             selectLanguage();
                         }}
                         src={translate}
                         className="translate-icon"
                         alt="logo"
-                    /> */}
+                    />
                     <img onClick={() => { window.open("https://www.github.com/yunying1/worth") }} src={github} className="github-icon" alt="logo" />
                 </div>
             </div>
@@ -64,15 +60,20 @@ function Home() {
                         </div>
                     </div>
                     <div className="introduction">
-                        <p>Enter the item you want to buy,</p>
-                        <p>
+                        <p>{ t('homeText1') }</p>
+                        <Trans
+                            i18nKey="homeText2" // optional -> fallbacks to defaults if not provided
+                            defaults={`<span className="primary">Recommend index</span> to you according to your bill.`} // optional defaultValue
+                            components={{ span: <span /> }}
+                        />
+                        {/* <p>
                             <span className="primary">Recommend index</span> to
                             you according to your bill.
-                        </p>
+                        </p> */}
                     </div>
                 </div>
                 <Button className="try-btn" onClick={toStep}>
-                    Try now
+                    { t('homeBtn') }
                 </Button>
             </div>
         </div>

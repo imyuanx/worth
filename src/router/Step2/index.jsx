@@ -9,6 +9,7 @@ import Message from "../../component/Message";
 import check from "../../assets/check.svg";
 import cross from "../../assets/cross.svg";
 import isComplete from "../../common/isComplete";
+import { useTranslation } from "react-i18next";
 
 function Step2() {
     const navigate = useNavigate();
@@ -17,6 +18,7 @@ function Step2() {
     const [formData, setFormData] = useState({
         amount: "",
     });
+    const { t, i18n } = useTranslation();
 
     const useLastData = () => {
         const lastData = JSON.parse(
@@ -46,7 +48,7 @@ function Step2() {
             {isShow && (
                 <Message>
                     <div className="message-content">
-                        <div>Use the last data?</div>
+                        <div>{t('useLastData')}</div>
                         <div className="message-icon-box">
                             <img
                                 className="message-icon"
@@ -67,7 +69,7 @@ function Step2() {
             {isShowNotComplete && (
                 <Message>
                     <div className="message-content">
-                        <div>Please enter complete.</div>
+                        <div>{t('notCompleteTip')}</div>
                         <div className="message-icon-box">
                             <img
                                 className="message-icon"
@@ -79,10 +81,10 @@ function Step2() {
                     </div>
                 </Message>
             )}
-            <ProgressBar className="affix-progress" percent={69} title={"2 / 3 Step2"} />
-            <p className="page-title">You need have some money...</p>
-            <FormItem label="Monthly disposable amount:">
-                <Input placeholder="$ amount" value={formData.amount} onChange={e => setFormData({ ...formData, amount: e.target.value })} />
+            <ProgressBar className="affix-progress" percent={69} title={t('step2Tip')} />
+            <p className="page-title">{t('step2Title')}</p>
+            <FormItem label={t('step2FormAmount')}>
+                <Input placeholder={t('step2FormAmountTip')} value={formData.amount} onChange={e => setFormData({ ...formData, amount: e.target.value })} />
             </FormItem>
             <Button onClick={() => {
                 console.log(formData);
@@ -92,7 +94,7 @@ function Step2() {
                 }
                 localStorage.setItem("isWorthBuy-step2-form-data", JSON.stringify(formData));
                 navigate("/step3");
-            }}>Next</Button>
+            }}>{t('step2FormBtn')}</Button>
         </div>
     );
 }

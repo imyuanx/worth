@@ -9,6 +9,7 @@ import Message from "../../component/Message";
 import check from "../../assets/check.svg";
 import cross from "../../assets/cross.svg";
 import isComplete from "../../common/isComplete";
+import { useTranslation } from "react-i18next";
 
 function Step3() {
     const navigate = useNavigate();
@@ -21,6 +22,7 @@ function Step3() {
         necessities: { price: "", quantity: "" },
         foods: { price: "", quantity: "" },
     });
+    const { t, i18n } = useTranslation();
 
     const onFinish = () => {
         console.log(formData);
@@ -63,7 +65,7 @@ function Step3() {
             {isShow && (
                 <Message>
                     <div className="message-content">
-                        <div>Use the last data?</div>
+                        <div>{t('useLastData')}</div>
                         <div className="message-icon-box">
                             <img
                                 className="message-icon"
@@ -84,7 +86,7 @@ function Step3() {
             {isShowNotComplete && (
                 <Message>
                     <div className="message-content">
-                        <div>Please enter complete.</div>
+                        <div>{t('notCompleteTip')}</div>
                         <div className="message-icon-box">
                             <img
                                 className="message-icon"
@@ -99,15 +101,15 @@ function Step3() {
             <ProgressBar
                 className="affix-progress"
                 percent={100}
-                title={"3 / 3 Step3 🎉"}
+                title={t('step3Tip')}
             />
             <p className="page-title">
-                Provide details of your last month's bill
+                {t('step3Title')}
             </p>
-            <FormItem label="Electronic products">
+            <FormItem label={t('step3FormElectronic')}>
                 <div className="form-item-children">
                     <Input
-                        placeholder="$ Total cost"
+                        placeholder={t('step3FormElectronicTip')}
                         value={formData.electronic.price}
                         onChange={(e) =>
                             setFormData({
@@ -121,7 +123,7 @@ function Step3() {
                     />
                     <Input
                         className="form-item-children-quantity"
-                        placeholder="Quantity"
+                        placeholder={t('step3FormQuantityTip')}
                         value={formData.electronic.quantity}
                         onChange={(e) =>
                             setFormData({
@@ -135,10 +137,10 @@ function Step3() {
                     />
                 </div>
             </FormItem>
-            <FormItem label="Clothes">
+            <FormItem label={t('step3FormClothes')}>
                 <div className="form-item-children">
                     <Input
-                        placeholder="$ Total cost"
+                        placeholder={t('step3FormClothesTip')}
                         value={formData.clothes.price}
                         onChange={(e) =>
                             setFormData({
@@ -152,7 +154,7 @@ function Step3() {
                     />
                     <Input
                         className="form-item-children-quantity"
-                        placeholder="Quantity"
+                        placeholder={t('step3FormQuantityTip')}
                         value={formData.clothes.quantity}
                         onChange={(e) =>
                             setFormData({
@@ -166,10 +168,10 @@ function Step3() {
                     />
                 </div>
             </FormItem>
-            <FormItem label="Entertainment">
+            <FormItem label={t('step3FormEntertainment')}>
                 <div className="form-item-children">
                     <Input
-                        placeholder="$ Total cost"
+                        placeholder={t('step3FormEntertainmentTip')}
                         value={formData.entertainment.price}
                         onChange={(e) =>
                             setFormData({
@@ -183,7 +185,7 @@ function Step3() {
                     />
                     <Input
                         className="form-item-children-quantity"
-                        placeholder="Quantity"
+                        placeholder={t('step3FormQuantityTip')}
                         value={formData.entertainment.quantity}
                         onChange={(e) =>
                             setFormData({
@@ -197,10 +199,10 @@ function Step3() {
                     />
                 </div>
             </FormItem>
-            <FormItem label="Necessities">
+            <FormItem label={t('step3FormNecessities')}>
                 <div className="form-item-children">
                     <Input
-                        placeholder="$ Total cost"
+                        placeholder={t('step3FormNecessitiesTip')}
                         value={formData.necessities.price}
                         onChange={(e) =>
                             setFormData({
@@ -214,7 +216,7 @@ function Step3() {
                     />
                     <Input
                         className="form-item-children-quantity"
-                        placeholder="Quantity"
+                        placeholder={t('step3FormQuantityTip')}
                         value={formData.necessities.quantity}
                         onChange={(e) =>
                             setFormData({
@@ -228,10 +230,10 @@ function Step3() {
                     />
                 </div>
             </FormItem>
-            <FormItem label="Foods">
+            <FormItem label={t('step3FormFoods')}>
                 <div className="form-item-children">
                     <Input
-                        placeholder="$ Total cost"
+                        placeholder={t('step3FormFoodsTip')}
                         value={formData.foods.price}
                         onChange={(e) =>
                             setFormData({
@@ -245,7 +247,7 @@ function Step3() {
                     />
                     <Input
                         className="form-item-children-quantity"
-                        placeholder="Quantity"
+                        placeholder={t('step3FormQuantityTip')}
                         value={formData.foods.quantity}
                         onChange={(e) =>
                             setFormData({
@@ -259,7 +261,7 @@ function Step3() {
                     />
                 </div>
             </FormItem>
-            <Button onClick={onFinish}>Finish</Button>
+            <Button onClick={onFinish}>{t('step3FormBtn')}</Button>
         </div>
     );
 }

@@ -9,6 +9,7 @@ import Select from "../../component/Select";
 import category from "../../common/category.js";
 import Message from "../../component/Message";
 import cross from "../../assets/cross.svg";
+import { useTranslation, Trans } from 'react-i18next';
 
 function Step1() {
     const navigate = useNavigate();
@@ -18,6 +19,8 @@ function Step1() {
         goodsType: Object.keys(category)[0],
         goodsPrice: "",
     });
+    const { t, i18n } = useTranslation();
+
     const closeMessage = () => {
         setIsShow(false);
     };
@@ -27,7 +30,7 @@ function Step1() {
             {isShow && (
                 <Message onClose={closeMessage} timing={2000}>
                     <div className="message-content">
-                        <div>Please enter complete.</div>
+                        <div>{t('notCompleteTip')}</div>
                         <div className="message-icon-box">
                             <img
                                 className="message-icon"
@@ -42,20 +45,20 @@ function Step1() {
             <ProgressBar
                 className="affix-progress"
                 percent={38}
-                title={"1 / 3 Step1"}
+                title={t('step1Tip')}
             />
-            <p className="page-title">What do you want to buy?</p>
-            <FormItem label="Name of something">
+            <p className="page-title">{ t('step1Title') }</p>
+            <FormItem label={t('step1FormName')}>
                 <Input
                     value={formData.goodsName}
                     onChange={(e) => {
                         console.log(e.target.value);
                         setFormData({ ...formData, goodsName: e.target.value });
                     }}
-                    placeholder="Example: T-shirt or camera"
+                    placeholder={t('step1FormNameTip')}
                 />
             </FormItem>
-            <FormItem label="Type of something">
+            <FormItem label={t('step1FormType')}>
                 <Select
                     defaultValue={Object.keys(category)[0]}
                     onChange={(e) => {
@@ -66,19 +69,19 @@ function Step1() {
                         const item = category[key];
                         return (
                             <option key={item.key} value={key}>
-                                {key}
+                                {t(key)}
                             </option>
                         );
                     })}
                 </Select>
             </FormItem>
-            <FormItem label="Unit price">
+            <FormItem label={t('step1FormPrice')}>
                 <Input
                     value={formData.goodsPrice}
                     onChange={(e) =>
                         setFormData({ ...formData, goodsPrice: e.target.value })
                     }
-                    placeholder="$ Unit price"
+                    placeholder={t('step1FormPriceTip')}
                 />
             </FormItem>
             <Button
@@ -95,7 +98,7 @@ function Step1() {
                     navigate("/step2");
                 }}
             >
-                Next
+                { t('step1FormBtn') }
             </Button>
         </div>
     );

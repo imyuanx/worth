@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import "./index.css";
 import getRecommendIndex from "../../common/getRecommendIndex";
 import { getEmoji, getTips } from "../../common/getResultByIndex";
+import { useTranslation } from "react-i18next";
 
 const canvasStyles = {
     position: "fixed",
@@ -63,6 +64,7 @@ function Result() {
     }, [makeShot]);
 
     const [recommendedIndex, setRecommendedIndex] = useState(0);
+    const { t } = useTranslation();
 
     useEffect(() => {
         let goodsInfo = JSON.parse(localStorage.getItem("isWorthBuy-step1-form-data"));
@@ -92,8 +94,8 @@ function Result() {
                 <div className="header">
                     <span>{getEmoji(recommendedIndex) + " " + recommendedIndex}</span>
                 </div>
-                <div className="result">{ getTips(recommendedIndex) }</div>
-                <div className="footer" onClick={toHome}>👉 Back to home</div>
+                <div className="result">{ t(getTips(recommendedIndex)) }</div>
+                <div className="footer" onClick={toHome}>{t('BackToHome')}</div>
             </div>
         </div>
     );

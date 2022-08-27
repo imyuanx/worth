@@ -47,5 +47,6 @@ export default {
         "emm, Think about it.": "emm, 请你考虑一下。",
         "Are you sure?": "你确定要买吗？",
         "Maybe you need to see other things...": "还是买点其他东西吧。。。",
+        SponsorMe: "💗 赞助我",
     },
 };

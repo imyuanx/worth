@@ -47,5 +47,6 @@ export default {
         "emm, Think about it.": "emm, Think about it.",
         "Are you sure?": "Are you sure?",
         "Maybe you need to see other things...": "Maybe you need to see other things...",
+        SponsorMe: "💗 Sponsor me",
     },
 };

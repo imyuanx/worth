@@ -84,6 +84,10 @@ function Result() {
         navigate("/");
     }
 
+    const toSponsor = () => {
+        window.open("https://dun.mianbaoduo.com/@yuanx");
+    }
+
     return (
         <div className="step-page">
             <ReactCanvasConfetti
@@ -95,7 +99,10 @@ function Result() {
                     <span>{getEmoji(recommendedIndex) + " " + recommendedIndex}</span>
                 </div>
                 <div className="result">{ t(getTips(recommendedIndex)) }</div>
-                <div className="footer" onClick={toHome}>{t('BackToHome')}</div>
+                <div className="footer">
+                    <div className="footer-item" onClick={toSponsor}>{t('SponsorMe')}</div>
+                    <div className="footer-item" onClick={toHome}>{t('BackToHome')}</div>
+                </div>
             </div>
         </div>
     );

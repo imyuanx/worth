@@ -2,7 +2,9 @@ export default {
     translation: {
         title: "Worth",
         homeText1: "输入你想购买的东西，",
-        homeText2: `根据你的账单，为你分析<span className="primary">推荐指数</span>。`,
+        homeText2_1: "根据你的账单，为你分析",
+        homeText2_2: "推荐指数",
+        homeText2_3: "。",
         homeBtn: "现在开始",
         step1Tip: "1 / 3 步骤一",
         step1Title: "你想买什么？",

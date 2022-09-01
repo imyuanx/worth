@@ -61,15 +61,7 @@ function Home() {
                     </div>
                     <div className="introduction">
                         <p>{ t('homeText1') }</p>
-                        <Trans
-                            i18nKey="homeText2" // optional -> fallbacks to defaults if not provided
-                            defaults={`<span className="primary">Recommend index</span> to you according to your bill.`} // optional defaultValue
-                            components={{ span: <span /> }}
-                        />
-                        {/* <p>
-                            <span className="primary">Recommend index</span> to
-                            you according to your bill.
-                        </p> */}
+                        {t('homeText2_1')}<span className="primary">{ t('homeText2_2') }</span>{ t('homeText2_3') }
                     </div>
                 </div>
                 <Button className="try-btn" onClick={toStep}>

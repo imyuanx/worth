@@ -2,7 +2,9 @@ export default {
     translation: {
         title: "Worth",
         homeText1: "Enter the item you want to buy,",
-        homeText2: `<span className="primary">Recommend index</span> to you according to your bill.`,
+        homeText2_1: "",
+        homeText2_2: `Recommend index`,
+        homeText2_3: ` to you according to your bill.`,
         homeBtn: "Try now",
         step1Tip: "1 / 3 Step1",
         step1Title: "What do you want to buy?",

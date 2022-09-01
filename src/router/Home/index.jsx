@@ -61,7 +61,11 @@ function Home() {
                     </div>
                     <div className="introduction">
                         <p>{ t('homeText1') }</p>
-                        {t('homeText2_1')}<span className="primary">{ t('homeText2_2') }</span>{ t('homeText2_3') }
+                        <div className="home-text-2-box">
+                            <div className="home-text-2"><span>{t('homeText2_1')}</span></div>
+                            <div className="home-text-2"><span className="home-text-2-primary">{t('homeText2_2')}</span></div>
+                            <div className="home-text-2"><span>{t('homeText2_3')}</span></div>
+                        </div>
                     </div>
                 </div>
                 <Button className="try-btn" onClick={toStep}>

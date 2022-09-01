@@ -90,22 +90,6 @@
     font-size: 20px;
 }
 
-.primary {
-    position: relative;
-}
-
-.primary::after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    left: -0.1em;
-    right: -0.1em;
-    bottom: 0;
-    transition: top 200ms cubic-bezier(0, 0.8, 0.13, 1);
-    background-color: rgb(0 173 181 / 50%);
-    top: 66%;
-}
-
 .title {
     width: 100%;
     font-size: 25px;
@@ -164,6 +148,31 @@
 .translate-icon {
     cursor: pointer;
 }
+
 .github-icon {
     cursor: pointer;
+}
+
+.home-text-2-box {
+    word-break: "break-all";
+    position: "relative";
+}
+
+.home-text-2 {
+    display: contents;
+}
+
+.home-text-2-primary {
+    position: relative;
+}
+
+.home-text-2-primary::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: -0.1em;
+    right: -0.1em;
+    bottom: 0;
+    background-color: rgb(0 173 181 / 50%);
+    top: 66%;
 }
